@@ -87,3 +87,22 @@
   $(".year").text(n)
 </script>
 ```
+
+---
+## Code for Manipulating Webflow's background video start time:
+```html
+<script>
+  $(document).ready(function(){
+    var video = $('video'); //target class 
+    if(video.length){
+      video.get(0).pause();
+      setTimeout(function(){ //remove the delay if needed
+        if(window.innerWidth < 768){//only works on tablet below
+          video.get(0).currentTime = 4;
+        }
+        video.get(0).play();
+      }, 9000);
+    }
+  });
+</script>
+```
