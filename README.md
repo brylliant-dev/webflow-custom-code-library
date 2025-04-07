@@ -106,3 +106,20 @@
   });
 </script>
 ```
+
+---
+## Resetting interaction in Finsweet
+```html
+<script>
+    /**reset IX**/
+    var Webflow = Webflow || []
+    Webflow.push(function () {
+      $("html").attr("fs-cmstabs-resetix", "64cb3cf628252df1fd7ef0fc")
+      window.Webflow && window.Webflow.destroy()
+      window.Webflow && window.Webflow.ready()
+      window.Webflow && window.Webflow.require("ix2").init()
+      document.dispatchEvent(new Event("readystatechange"))
+    })
+    /**close resetIX**/
+</script>
+```
